@@ -21,6 +21,10 @@ const listContainer = document.getElementById("list-container").addEventListener
   const getInputField = document.getElementById("input-field");
   const getInputFieldValue = getInputField.value;
   let inputFieldUpdateValue = getInputFieldValue + getElementValue;
+  // BACKSPACE TO REMOVE LAST ONE ITEM
+  if (getElementValue == "Backspace") {
+    inputFieldUpdateValue = getInputFieldValue.slice(0, -1);
+  } // # BACKSPACE
 
   // ERROR CHECK:: Last 2 charrecter not allow as speciall charrecter
 
@@ -31,9 +35,9 @@ const listContainer = document.getElementById("list-container").addEventListener
     const getLastFirst = inputFieldUpdateValue.slice(-1);
     // CHECK LAST SECOND HAS OPERATOR OR NOT
     if (speciaCharValidation(getLastSecond) == true) {
-      console.log('last second: ', getLastSecond);
+      console.log("last second: ", getLastSecond);
       // Allow bracket as last second
-      if (getLastSecond != ")" ) {
+      if (getLastSecond != ")") {
         // CHECK LAST FAST HAS OPERATOR OR NOT
         if (speciaCharValidation(getLastFirst) == true) {
           // DELETE LAST FARST OPERATOR AND SET NEW VALUE
@@ -44,6 +48,7 @@ const listContainer = document.getElementById("list-container").addEventListener
     }
   }
   // # ERROR CHECK COMPLETED
+
   //:: LETS CONDITION APPLY IF SPECIALL BUTTON PRESS
   //== If = EQUAL PRESS APPLY eval method
   // The eval() method evaluates or executes an argument.
