@@ -31,12 +31,16 @@ const listContainer = document.getElementById("list-container").addEventListener
     const getLastFirst = inputFieldUpdateValue.slice(-1);
     // CHECK LAST SECOND HAS OPERATOR OR NOT
     if (speciaCharValidation(getLastSecond) == true) {
-      // CHECK LAST FAST HAS OPERATOR OR NOT
-      if (speciaCharValidation(getLastFirst) == true) {
-        // DELETE LAST FARST OPERATOR AND SET NEW VALUE
-        inputFieldUpdateValue = getInputFieldValue.slice(0, -1);
-        console.log("TWICE OPERATOR NOT ALLOWD ", getLastFirst);
-      }
+      console.log('last second: ', getLastSecond);
+      // Allow bracket as last second
+      if (getLastSecond != ")" ) {
+        // CHECK LAST FAST HAS OPERATOR OR NOT
+        if (speciaCharValidation(getLastFirst) == true) {
+          // DELETE LAST FARST OPERATOR AND SET NEW VALUE
+          inputFieldUpdateValue = getInputFieldValue.slice(0, -1);
+          console.log("TWICE OPERATOR NOT ALLOWD ", getLastFirst);
+        } //# last first operator check
+      } //# check brackets
     }
   }
   // # ERROR CHECK COMPLETED
