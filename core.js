@@ -35,7 +35,7 @@ const listContainer = document.getElementById("list-container").addEventListener
     const getLastFirst = inputFieldUpdateValue.slice(-1);
     // CHECK LAST SECOND HAS OPERATOR OR NOT
     if (speciaCharValidation(getLastSecond) == true) {
-      console.log("last second: ", getLastSecond);
+     // console.log("last second: ", getLastSecond);
       // Allow bracket as last second
       if (getLastSecond != ")") {
         // CHECK LAST FAST HAS OPERATOR OR NOT
@@ -80,3 +80,4 @@ const listContainer = document.getElementById("list-container").addEventListener
   // htmlElement.innerText = newValue;
   // console.log(inputFieldUpdateValue);
 });
+
